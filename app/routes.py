@@ -3,6 +3,10 @@ from flask import Flask, redirect
 # create flask app
 app = Flask(__name__)
 
+if __name__ == '__main__':
+    app.run(debug=True)
+    
+
 
 # define endpoints
 @app.route('/')
