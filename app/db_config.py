@@ -1,8 +1,9 @@
 from psycopg2 import connect
-from  utils import env
+from utils import env
 
 class DBconnection():
-    def get_connection(self):
+    @staticmethod
+    def get_connection():
         __connection = None
         conn = connect(host=env('HOST'),
                        database=env('DATABASE'),
@@ -11,5 +12,3 @@ class DBconnection():
         return conn
 
 
-conn = DBconnection()
-print(conn.get_connection())
